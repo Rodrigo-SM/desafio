@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+
+
+body,
+html {
+    height: 100%;
+}
+
+
+
+
+
+.page {
+    background: #fff;
+    color: #444;
+    min-height: 100%;
+}
+
+
+#dark-mode-input {
+    display: none;
+}
+
+#dark-mode-input:checked~* .page {
+    background: #444 !important;
+    color: #fff;
+}
+
+.dark-mode-toggler {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border: 2px solid #bbb;
+    border-radius: 20px;
+    top: 10px;
+    right: 10px;
+    transition: all 300ms ease-in-out;
+
+}
+
+
+
+.dark-mode-toggler div {
+    width: 12px;
+    height: 12px;
+    background: deeppink;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: all 300ms ease-in-out;
+}
+
+#dark-mode-input:checked~.dark-mode-toggler {
+    background: deeppink;
+}
+
+#dark-mode-input:checked~.dark-mode-toggler div {
+    background: #ccc;
+    left: 21px;
+}
+
+
+
+
+
+
+
+
+header {
+    background-color: #2F3676;
+    width: 100%autog;
+    height: 8em;
+}
+
+
+#titulo {
+    position: absolute;
+    height: 80px;
+    left: 6.49%;
+    right: 8.24%;
+    top: calc(50% - 70px/2 - 300.5px);
+    justify-items: center;
+    font-family: 'Inter';
+    font-size: 40px;
+    line-height: 28px;
+
+    color: #FFFFFF;
+}
+
+
+label {
+    position: absolute;
+
+    margin-left: 15px;
+    font-family: 'Inter';
+    font-size: 30px;
+    line-height: 25px;
+
+    color: #071723;
+}
+
+textarea {
+    position: absolute;
+    left: 6.56%;
+    right: 58.86%;
+    top: 62.01%;
+    bottom: 24.22%;
+    padding-left: 5px;
+    background: #DDE3E9;
+    border: 1px solid #2F3676;
+    border-radius: 4px;
+
+
+}
+
+
+
+
+button {
+    background-color: #2F3676;
+    color: #FFFFFF;
+
+}
+
+img {
+    position: absolute;
+    left: 58.17%;
+    right: 60.11%;
+    top: 0.91%;
+    bottom: 71.68%;
+
+}
+
+
+
+#OneQ {
+    height: 180px;
+
+}
+
+footer {
+    position: absolute;
+    background: #DDE3E9;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+#TwoQ {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+}
+
+;
+
+#ThreeQ {
+    height: 120px;
+}
+
+fieldset {
+    border: 0;
+}
+
+#enviar {
+    position: absolute;
+    width: 133px;
+    height: 37px;
+    left: calc(90% - 133px/2 - 193.5px);
+    top: calc(50% - 37px/2 + 20.5px);
+    color: #FFFFFF;
+    background: #2F3676;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+#react {
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+    color: #2F3676;
+    margin-right: 5px;
+}
+
+#vue {
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+    color: #2F3676;
+    margin-right: 5px;
+
+}
+
+#angular {
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+    color: #2F3676;
+    margin-right: 5px;
+
+}
+
+#menos {
+    width: 32px;
+    height: 32px;
+    font-size: 40px;
+    padding-bottom: 15px;
+    color: #FFFFFF;
+}
+
+
+#mais {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#section {
+    font-family: 'Inter';
+    font-size: 30px;
+    line-height: 25px;
+    margin-left: 15px;
+    color: #071723;
+}
+
+#botoes {
+    display: flex;
+    flex-direction: rows;
+    margin-left: 15px;
+    margin-top: 50px;
+}
+
+#box {
+    background-color: #DDE3E9;
+    width: 50px;
+    height: 32px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-size: 25px;
+}
+
+
+
+.inputs {
+    font-size: 28px;
+    color: #071723;
+}
