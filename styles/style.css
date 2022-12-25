@@ -12,70 +12,18 @@
 
 
 
-body,
-html {
+body {
     height: 100%;
-}
-
-
-
-
-
-.page {
-    background: #fff;
-    color: #444;
-    min-height: 100%;
-}
-
-
-#dark-mode-input {
-    display: none;
-}
-
-#dark-mode-input:checked~* .page {
-    background: #444 !important;
-    color: #fff;
-}
-
-.dark-mode-toggler {
-    position: absolute;
-    width: 40px;
-    height: 20px;
-    background: #ccc;
-    border: 2px solid #bbb;
-    border-radius: 20px;
-    top: 10px;
-    right: 10px;
-    transition: all 300ms ease-in-out;
 
 }
 
 
 
-.dark-mode-toggler div {
-    width: 12px;
-    height: 12px;
-    background: deeppink;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: all 300ms ease-in-out;
+
+switch {
+    display: flex;
+    color: #071723;
 }
-
-#dark-mode-input:checked~.dark-mode-toggler {
-    background: deeppink;
-}
-
-#dark-mode-input:checked~.dark-mode-toggler div {
-    background: #ccc;
-    left: 21px;
-}
-
-
-
-
-
 
 
 
@@ -101,7 +49,22 @@ header {
 }
 
 
+
 label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 24px;
+
+}
+
+
+
+
+
+
+legend {
     position: absolute;
 
     margin-left: 15px;
@@ -249,9 +212,10 @@ fieldset {
     background-color: #DDE3E9;
     width: 50px;
     height: 32px;
-    padding-left: 5px;
+    padding-left: 0px;
     padding-top: 5px;
     font-size: 25px;
+    text-align: center;
 }
 
 
@@ -259,4 +223,54 @@ fieldset {
 .inputs {
     font-size: 28px;
     color: #071723;
+}
+
+.message {
+    height: 101px;
+    width: 598px;
+    left: 730px;
+    top: 538px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+.success {
+    position: absolute;
+    font-family: 'Inter';
+    font-size: 28px;
+    color: #103a24;
+    background-color: #3ede8c;
+    padding-top: 10px;
+    height: 40px;
+    width: 550px;
+    text-align: center;
+    margin-right: 100px;
+    left: calc(80% - 133px/2 - 193.5px);
+}
+
+.error {
+    position: absolute;
+    font-family: 'Inter';
+    font-size: 28px;
+    line-height: 20px;
+    color: #c50018;
+    height: 40px;
+    width: 400px;
+    background-color: pink;
+    text-align: center;
+    padding-top: 10px;
+    margin-right: 100px;
+
+}
+
+#mensagem {
+    position: absolute;
+    display: flex;
+    height: 40px;
+    width: 200px;
+    margin-right: 25px;
+    left: calc(80% - 133px/2 - 193.5px);
+    font-size: 40px;
+    text-align: center;
+
 }

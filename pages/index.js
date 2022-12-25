@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import Script from 'next/script';
 import React, { useState } from 'react';
-
+import Switch from 'react-switch'
+import ReactDOM from "react-dom/client";
+import { useForm, useController } from "react-hook-form";
 
 
 function Home() {
@@ -14,9 +15,40 @@ function Home() {
 
 
 
+  let [sticker, setSticker] = useState(false)
+  function Mudar() {
+    if (sticker !== true) {
+      sticker = true
+    }
+  }
 
+
+
+
+  const [status, setStatus] = useState({
+    type: '',
+    mensagem: ''
+  });
+
+
+
+  function validate() {
+    if (count === 0 || sticker === false) return setStatus({ type: 'error', mensagem: 'Erro na compra do Sticker' });
+    if (count > 0 && sticker === true) return setStatus({ type: 'success', mensagem: 'Sticker encomendado com sucesso' });
+  }
+
+
+
+
+  const send = async e => {
+    e.preventDefault();
+
+  }
+
+  console.log(sticker)
 
   return (<div className='page'>
+
 
 
 
@@ -28,50 +60,54 @@ function Home() {
 
 
 
-      <input type="checkbox" id="dark-mode-input" name='dark-mode' />
-      <label for="dark-mode-input"></label>
-
 
     </header>
 
 
 
-    <fieldset id='OneQ'>
-      <label >Quais stickers?</label> <br /> <br />
+    <form name='ComprarStickers' onSubmit={send} >
+      <fieldset id='OneQ'>
+        <legend>Quais stickers?</legend> <br /> <br />
 
-      <div className='inputs'><input type="checkbox" id="react" value="react" />React </div>
-      <div className='inputs'><input type="checkbox" id="vue" value="vue" />Vue </div>
-      <div className='inputs'><input type="checkbox" id="angular" value="angular" />Angular </div>
+        <div className='inputs'><input type="checkbox" id="react" value={sticker.react} name='Stickers' onClick={Mudar} />   <label for="react">React</label>       </div>
+        <div className='inputs'><input type="checkbox" id="vue" value={sticker.vue} name='Stickers' onClick={Mudar} />  <label for="vue">Vue</label>           </div>
+        <div className='inputs'><input type="checkbox" id="angular" value={sticker.angular} name='Stickers' onClick={Mudar} />  <label for="angular">Angular</label>        </div>
 
 
-    </fieldset>
+      </fieldset>
 
-    <fieldset id='TwoQ'>
-      <label >Quantos stickers de cada?</label> <br /> <br />
-      <div id='botoes'>
-        <button id='menos' onClick={handleSub}>-</button>
-        <div id='box'>{count}</div>
-        <button id='mais' onClick={() => { setCount(count + 1) }}>+</button>
+      <fieldset id='TwoQ'>
+        <legend >Quantos stickers de cada?</legend> <br /> <br />
+        <div id='botoes'>
+          <button id='menos' onClick={handleSub}>-</button>
+          <div id='box'>{count}</div>
+          <button id='mais' onClick={() => { setCount(count + 1) }}>+</button>
 
-      </div>
-    </fieldset>
+        </div>
+      </fieldset>
 
-    <fieldset id='threeQ'>
-      <div>
-        <section id='section'>
-          Observações
-        </section>
-        <textarea rows="4" id='obs' name='obs'></textarea>
-      </div>
+      <fieldset id='threeQ'>
+        <div>
+          <section id='section'>
+            Observações
+          </section>
+          <textarea rows="4" id='obs' name='obs' ></textarea>
+        </div>
 
-    </fieldset>
-
-    <footer>
-      <button id='enviar'>ENVIAR</button>
-    </footer>
+      </fieldset>
 
 
 
+      <footer>
+        <button id='enviar' type='submit' onClick={validate}>ENVIAR</button>
+      </footer>
+
+    </form>
+
+    <div id='mensagem'>
+      {status.type === 'success' ? <p className='success'>{status.mensagem}</p> : ""}
+      {status.type === 'error' ? <p className='error'>{status.mensagem}</p> : ""}
+    </div>
 
 
   </div>)
