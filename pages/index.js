@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React, { useState } from 'react';
 import Switch from 'react-switch'
 import ReactDOM from "react-dom/client";
-import { useForm, useController } from "react-hook-form";
+import ReactSwitch from 'react-switch';
 
 
 function Home() {
@@ -12,6 +12,17 @@ function Home() {
       setCount(count - 1)
     }
   }
+
+  const [escuro, setEscuro] = useState(false)
+  const tema = {
+    backgroundColor: escuro ? "#071723" : "#fff",
+    color: escuro ? "#fff" : "#071723"
+  }
+
+  function MudarTema() {
+    setEscuro(old => !old)
+  }
+
 
 
 
@@ -47,7 +58,7 @@ function Home() {
 
   console.log(sticker)
 
-  return (<div className='page'>
+  return (<div className='page' style={tema} >
 
 
 
@@ -60,18 +71,21 @@ function Home() {
 
 
 
+      <input type="checkbox" id="tema" onChange={MudarTema} />
+      <label class="dark-mode-toggler" for="tema" onChange={MudarTema} >
+        <div onChange={MudarTema}  ></div>
+      </label>
 
     </header>
-
 
 
     <form name='ComprarStickers' onSubmit={send} >
       <fieldset id='OneQ'>
         <legend>Quais stickers?</legend> <br /> <br />
 
-        <div className='inputs'><input type="checkbox" id="react" value={sticker.react} name='Stickers' onClick={Mudar} />   <label for="react">React</label>       </div>
-        <div className='inputs'><input type="checkbox" id="vue" value={sticker.vue} name='Stickers' onClick={Mudar} />  <label for="vue">Vue</label>           </div>
-        <div className='inputs'><input type="checkbox" id="angular" value={sticker.angular} name='Stickers' onClick={Mudar} />  <label for="angular">Angular</label>        </div>
+        <div className='inputs'><input type="checkbox" id="react" value={sticker.react} name='Stickers' onChange={Mudar} />   <label for="react">React</label>       </div>
+        <div className='inputs'><input type="checkbox" id="vue" value={sticker.vue} name='Stickers' onChange={Mudar} />  <label for="vue">Vue</label>           </div>
+        <div className='inputs'><input type="checkbox" id="angular" value={sticker.angular} name='Stickers' onChange={Mudar} />  <label for="angular">Angular</label>        </div>
 
 
       </fieldset>
