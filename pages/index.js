@@ -2,7 +2,7 @@ import Head from 'next/head';
 import React, { useState } from 'react';
 import Switch from 'react-switch'
 import ReactDOM from "react-dom/client";
-import ReactSwitch from 'react-switch';
+
 
 
 function Home() {
@@ -26,15 +26,32 @@ function Home() {
 
 
 
-  let [sticker, setSticker] = useState(false)
-  function Mudar() {
-    if (sticker !== true) {
-      sticker = true
-    }
+  const [react, setReact] = useState(false)
+  const [vue, setVue] = useState(false)
+  const [angular, setAngular] = useState(false)
+
+  function MudarReact() {
+    setReact(old => !old)
   }
 
+  function MudarVue() {
+    setVue(old => !old)
+  }
 
+  function MudarAngular() {
+    setAngular(old => !old)
+  }
 
+  const [sticker, setSticker] = useState(false)
+  function changeSticker (){
+    if(react === true || vue === true || angular === true){
+      setSticker(true)
+    }
+      else if(react === false && vue === false && angular === false){setSticker(false)}
+  }
+
+  
+  
 
   const [status, setStatus] = useState({
     type: '',
@@ -48,7 +65,7 @@ function Home() {
     if (count > 0 && sticker === true) return setStatus({ type: 'success', mensagem: 'Sticker encomendado com sucesso' });
   }
 
-
+console.log(sticker)
 
 
   const send = async e => {
@@ -56,7 +73,7 @@ function Home() {
 
   }
 
-  console.log(sticker)
+ console.log('React: ' + react + ' vue: ' + vue  + ' Angular: ' + angular     )
 
   return (<div className='page' style={tema} >
 
@@ -83,9 +100,9 @@ function Home() {
       <fieldset id='OneQ'>
         <legend>Quais stickers?</legend> <br /> <br />
 
-        <div className='inputs'><input type="checkbox" id="react" value={sticker.react} name='Stickers' onChange={Mudar} />   <label for="react">React</label>       </div>
-        <div className='inputs'><input type="checkbox" id="vue" value={sticker.vue} name='Stickers' onChange={Mudar} />  <label for="vue">Vue</label>           </div>
-        <div className='inputs'><input type="checkbox" id="angular" value={sticker.angular} name='Stickers' onChange={Mudar} />  <label for="angular">Angular</label>        </div>
+        <div className='inputs'><input type="checkbox" id="react" value={react.react} name='Stickers' onChange={MudarReact} onClick={changeSticker}/>   <label for="react">React</label>       </div>
+        <div className='inputs'><input type="checkbox" id="vue" value={vue.vue} name='Stickers' onChange={MudarVue} onClick={changeSticker}/>  <label for="vue">Vue</label>           </div>
+        <div className='inputs'><input type="checkbox" id="angular" value={angular.angular} name='Stickers' onChange={MudarAngular} onClick={changeSticker}  />  <label for="angular">Angular</label>        </div>
 
 
       </fieldset>
@@ -113,13 +130,14 @@ function Home() {
 
 
       <footer>
-        <button id='enviar' type='submit' onClick={validate}>ENVIAR</button>
+        <button id='enviar' type='submit' onDoubleClick={validate} onClick={changeSticker}>ENVIAR</button>
       </footer>
 
     </form>
 
     <div id='mensagem'>
-      {status.type === 'success' ? <p className='success'>{status.mensagem}</p> : ""}
+      {status.type === 'success' && <p className='success'>{status.mensagem}</p>}
+
       {status.type === 'error' ? <p className='error'>{status.mensagem}</p> : ""}
     </div>
 

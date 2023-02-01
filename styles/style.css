@@ -10,21 +10,18 @@
 
 }
 
-
 .page {
     height: 100vh;
 }
 
 body {
     height: 100%;
-
 }
 
 
 #tema {
     display: none;
 }
-
 
 .dark-mode-toggler {
     text-align: center;
@@ -67,7 +64,6 @@ header {
     height: 8em;
 }
 
-
 #titulo {
     position: absolute;
     height: 80px;
@@ -78,11 +74,8 @@ header {
     font-family: 'Inter';
     font-size: 40px;
     line-height: 28px;
-
     color: #FFFFFF;
 }
-
-
 
 label {
     font-family: 'Inter';
@@ -90,13 +83,7 @@ label {
     font-weight: 400;
     font-size: 30px;
     line-height: 24px;
-
 }
-
-
-
-
-
 
 legend {
     position: absolute;
@@ -105,8 +92,6 @@ legend {
     font-family: 'Inter';
     font-size: 30px;
     line-height: 25px;
-
-
 }
 
 textarea {
@@ -119,16 +104,12 @@ textarea {
     background: #DDE3E9;
     border: 1px solid #2F3676;
     border-radius: 4px;
-
-
 }
-
-
-
 
 button {
     background-color: #2F3676;
     color: #FFFFFF;
+    cursor: pointer;
 
 }
 
@@ -140,8 +121,6 @@ img {
     bottom: 71.68%;
 
 }
-
-
 
 #OneQ {
     height: 180px;
@@ -198,7 +177,6 @@ fieldset {
     width: 30px;
     color: #2F3676;
     margin-right: 5px;
-
 }
 
 #angular {
@@ -207,7 +185,6 @@ fieldset {
     width: 30px;
     color: #2F3676;
     margin-right: 5px;
-
 }
 
 #menos {
@@ -217,7 +194,6 @@ fieldset {
     padding-bottom: 15px;
     color: #FFFFFF;
 }
-
 
 #mais {
     width: 32px;
@@ -232,7 +208,6 @@ fieldset {
     font-size: 30px;
     line-height: 25px;
     margin-left: 15px;
-
 }
 
 #botoes {
@@ -253,13 +228,10 @@ fieldset {
     color: black;
 }
 
-
-
 .inputs {
     font-size: 28px;
 
 }
-
 
 .success {
     position: absolute;
@@ -287,7 +259,6 @@ fieldset {
     text-align: center;
     padding-top: 10px;
     margin-right: 100px;
-
 }
 
 #mensagem {
@@ -299,5 +270,4 @@ fieldset {
     left: calc(80% - 133px/2 - 193.5px);
     font-size: 40px;
     text-align: center;
-
 }
